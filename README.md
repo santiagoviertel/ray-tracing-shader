@@ -1,14 +1,14 @@
 # Ray Tracing Shader
 
 A fragment shader that implements a __height limited [ray tracer](https://en.wikipedia.org/wiki/Ray_tracing_(graphics))__ in the GLSL language.
-The ray tracer computes the image using the __perspective projection__ and the [__Phong reflection model__](https://en.wikipedia.org/wiki/Phong_reflection_model).
+The ray tracer computes the image by using the __perspective projection__ and the [__Phong reflection model__](https://en.wikipedia.org/wiki/Phong_reflection_model).
 It renders a sphere of ruby and two cubes of emerald and sapphire over a floor of silver.
 
-The ray tracer implements __translucent shadows__ and __photorealism__, processing the reflectance and transmittance with the [__Fresnel equations__](https://en.wikipedia.org/wiki/Fresnel_equations).
-As the GLSL language [__does not allow recursion__](https://www.khronos.org/registry/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-definitions) in function calls, the ray tracer implements the recursion using a [__binary heap__](https://en.wikipedia.org/wiki/Binary_heap).
+The ray tracer implements __translucent shadows__ and __photorealism__, by processing the reflectance and transmittance with the [__Fresnel equations__](https://en.wikipedia.org/wiki/Fresnel_equations).
+As the GLSL language [__does not allow recursion__](https://www.khronos.org/registry/OpenGL/specs/gl/GLSLangSpec.4.60.html#function-definitions) in function calls, the ray tracer implements the recursion by using a [__binary heap__](https://en.wikipedia.org/wiki/Binary_heap).
 
-The ray tracer first process each heap node using a top-down approach, computing the color with the Phong model and the reflected and transmitted rays.
-At the end, it reprocess all colors using a bottom-up approach, merging the colors of the reflected and transmitted rays with the already processed color of the node.
+The ray tracer first process each heap node by using a top-down approach, computing the color with the Phong model and the reflected and transmitted rays.
+At the end, it reprocess all colors by using a bottom-up approach, merging the colors of the reflected and transmitted rays with the already processed color of the node.
 
 
 ## Sample images
